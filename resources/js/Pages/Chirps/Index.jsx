@@ -52,6 +52,15 @@ export default function Index({ auth, chirps }) {
                         onChange={e => setData('message', e.target.value)}
                     ></textarea>
 
+                    {/* Input untuk hashtag */}
+                    <input
+                        type="text"
+                        className="mt-2 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                        placeholder="Add hashtags"
+                        value={data.hashtags}
+                        onChange={e => setData('hashtags', e.target.value)}
+                    />
+                    
                     {/* Input untuk gambar */}
                     <input
                         type="file"
@@ -61,14 +70,6 @@ export default function Index({ auth, chirps }) {
                         
                     />
 
-                    {/* Input untuk hashtag */}
-                    <input
-                        type="text"
-                        className="mt-2 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                        placeholder="Add hashtags"
-                        value={data.hashtags}
-                        onChange={e => setData('hashtags', e.target.value)}
-                    />
 
                     {/* Menampilkan error jika ada */}
                     <InputError message={errors.message || errors.image || errors.hashtags} className="mt-2" />

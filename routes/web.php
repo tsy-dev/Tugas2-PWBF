@@ -29,4 +29,7 @@ Route::resource('chirps', ChirpController::class)
     ->only(['index', 'store', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
 
+Route::get('/admin', function(){
+    return Inertia::render('admin.dashboard.page');
+});
 require __DIR__.'/auth.php';
